@@ -1,0 +1,46 @@
+{
+  "puzzles": [
+    {
+      "id": "skole-dag",
+      "image1": {
+        "srcBase": "skole",
+        "alt": "Skole",
+        "wordPart": "skole"
+      },
+      "image2": {
+        "srcBase": "dag",
+        "alt": "Dag",
+        "wordPart": "dag"
+      },
+      "answerImage": {
+        "srcBase": "skoledag",
+        "alt": "Skoledag",
+        "word": "skoledag"
+      },
+      "answer": "skoledag",
+      "tags": ["education", "time"],
+      "childrenSafe": true
+    },
+    {
+      "id": "test-puzzle",
+      "image1": {
+        "srcBase": "skole",
+        "alt": "Skole",
+        "wordPart": "test"
+      },
+      "image2": {
+        "srcBase": "dag",
+        "alt": "Dag", 
+        "wordPart": "word"
+      },
+      "answerImage": {
+        "srcBase": "skoledag",
+        "alt": "Test Word",
+        "word": "testword"
+      },
+      "answer": "testword",
+      "tags": ["test"],
+      "childrenSafe": true
+    }
+  ]
+}

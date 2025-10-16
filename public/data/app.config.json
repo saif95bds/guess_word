@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "defaultLocale": "nb",
+  "enabledModes": ["untimed", "timed"],
+  "defaultMode": "untimed",
+  "timer": {
+    "enabled": true,
+    "durations": [30, 60, 90],
+    "default": 60
+  },
+  "selection": {
+    "strategy": "random",
+    "seed": null
+  },
+  "input": {
+    "normalizeCase": true,
+    "normalizeDiacritics": false,
+    "autosubmitOnEnter": true,
+    "focusOnImageTap": true
+  },
+  "effects": {
+    "correct": {
+      "motion": "collide"
+    },
+    "incorrect": {
+      "type": "shake",
+      "overlaySizePct": 22
+    },
+    "roundComplete": "confetti",
+    "durationMs": 700
+  },
+  "answerCard": {
+    "showImage": true,
+    "transition": "fade",
+    "durationMs": 500
+  },
+  "images": {
+    "preferFormats": ["svg", "webp", "avif"],
+    "tiers": [320, 480, 640],
+    "budgetKB": 80
+  }
+}

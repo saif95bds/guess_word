@@ -1,0 +1,37 @@
+{
+  "ui": {
+    "title": "Gjett Ordet",
+    "submit": "Send inn",
+    "exit": "Avslutt",
+    "replay": "Spill igjen",
+    "changeMode": "Endre modus",
+    "correctOfTotal": "{{correct}} av {{total}}",
+    "timeLeft": "{{time}} igjen",
+    "placeholder": "Skriv det sammensatte ordet...",
+    "modes": {
+      "untimed": "Uten tid",
+      "timed": "Med tid"
+    }
+  },
+  "summary": {
+    "title": "Runde fullført!",
+    "scoreText": "Du fikk {{correct}} av {{total}} riktig!",
+    "percentage": "{{percent}}%"
+  },
+  "errors": {
+    "configLoadFailed": "Kunne ikke laste konfigurasjon",
+    "puzzlesLoadFailed": "Kunne ikke laste oppgaver",
+    "stringsLoadFailed": "Kunne ikke laste tekster"
+  },
+  "accessibility": {
+    "imageAlt": "Bilde som viser {{wordPart}}",
+    "submitButton": "Send inn svar",
+    "exitButton": "Avslutt spillet",
+    "modeSelector": "Velg spillmodus",
+    "scoreRegion": "Poengsum",
+    "timerRegion": "Nedtelling",
+    "answerCorrect": "Riktig svar!",
+    "answerIncorrect": "Feil svar. Riktig svar er {{answer}}",
+    "gameComplete": "Spillet er fullført"
+  }
+}
