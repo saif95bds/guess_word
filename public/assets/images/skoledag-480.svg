@@ -1,0 +1,7 @@
+<svg width="480" height="640" viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="640" fill="#9B59B6"/>
+  <rect x="40" y="220" width="400" height="160" fill="#FFFFFF" rx="15"/>
+  <text x="240" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#333">📚☀️</text>
+  <text x="240" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333">SKOLEDAG</text>
+  <text x="240" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">(School Day)</text>
+</svg>

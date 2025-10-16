@@ -1,0 +1,6 @@
+<svg width="640" height="853" viewBox="0 0 640 853" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="853" fill="#F39C12"/>
+  <rect x="80" y="350" width="480" height="160" fill="#FFFFFF" rx="20"/>
+  <text x="320" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#333">☀️</text>
+  <text x="320" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#333">DAG</text>
+</svg>
