@@ -25,6 +25,19 @@ body {
   overflow-x: hidden;
 }
 
+/* Screen reader only - for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -115,6 +128,25 @@ body {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 2px solid transparent;
+  position: relative;
+  touch-action: manipulation; /* Improves mobile tap responsiveness */
+  -webkit-tap-highlight-color: rgba(76, 175, 80, 0.2); /* Mobile tap feedback */
+}
+
+/* Add tap hint for mobile users */
+.image-card::after {
+  content: '👆';
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.2rem;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.image-card:hover::after {
+  opacity: 0.8;
 }
 
 .image-card:hover {
@@ -154,12 +186,148 @@ body {
   opacity: 0.6;
 }
 
-.word-part {
-  padding: 1rem;
+/* WordPart revealed on click */
+.wordpart-reveal {
+  font-size: 2rem;
+  font-weight: 600;
+  opacity: 1;
+  color: #4CAF50;
+  animation: revealFade 0.3s ease-in;
+}
+
+@keyframes revealFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Answer Card Backdrop */
+.answer-card-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 499;
+  backdrop-filter: blur(4px);
+}
+
+/* Answer Card */
+.answer-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+  max-width: 500px;
+  width: 90%;
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.answer-card-correct {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.95), rgba(56, 142, 60, 0.95));
+}
+
+.answer-card-incorrect {
+  background: linear-gradient(135deg, rgba(244, 67, 54, 0.95), rgba(211, 47, 47, 0.95));
+}
+
+.answer-card-clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.answer-card-clickable:hover {
+  transform: translate(-50%, -50%) scale(1.02);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+}
+
+.answer-card-clickable:active {
+  transform: translate(-50%, -50%) scale(0.98);
+}
+
+.answer-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.answer-image-container {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.answer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.answer-word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   text-align: center;
-  font-weight: 500;
-  font-size: 1.1rem;
-  background: rgba(0, 0, 0, 0.2);
+}
+
+.answer-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.answer-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Answer Card Transitions */
+.answer-card-fade {
+  animation: fadeIn var(--transition-duration, 500ms) ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.answer-card-slide {
+  animation: slideUp var(--transition-duration, 500ms) ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* Input Dock */
@@ -198,6 +366,20 @@ body {
   outline: none;
   border-color: #4CAF50;
   background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+  animation: focusPulse 0.3s ease-out;
+}
+
+@keyframes focusPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .button-group {

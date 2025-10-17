@@ -41,6 +41,7 @@ export interface AppConfig {
     showImage: boolean;
     transition: 'fade' | 'slide' | 'none';
     durationMs: number;
+    dismissOnClick: boolean;
   };
   images: {
     preferFormats?: string[];

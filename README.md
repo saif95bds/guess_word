@@ -1,46 +1,92 @@
-# Guess Word# React + TypeScript + Vite
+# Guess Word
 
+A Norwegian word-guessing game built with React + TypeScript + Vite. Players combine two images to guess compound Norwegian words.
 
+## Development
 
-A React + TypeScript word guessing game built with Vite.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-
-
-## DevelopmentCurrently, two official plugins are available:
-
-
-
-```bash- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-
-# Install dependencies- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
+```bash
+# Install dependencies
 npm install
 
-## React Compiler
-
 # Start development server
+npm run dev
 
-npm run devThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-
-
-# Build for production## Expanding the ESLint configuration
-
+# Build for production
 npm run build
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
 # Preview production build
+npm run preview
+```
 
-npm run preview```js
+## Current Progress
 
-```export default defineConfig([
+### ✅ Segment 5: Game Engine (Answer Check)
+The game engine is fully integrated with answer checking:
+- Case-insensitive comparison with Norwegian character preservation (æ/ø/å)
+- Auto-advance to next puzzle after submission
+- Timer functionality for timed mode
+- Config-driven normalization and puzzle selection
 
-  globalIgnores(['dist']),
+### ✅ Segment 6: AnswerCard with Answer Image
+Answer card displays after each submission:
+- Shows correct answer image with responsive srcset
+- Green background for correct answers, red for incorrect
+- Localized feedback messages ("Riktig svar!" / "Feil svar...")
+- Configurable transitions (fade/slide/none) and duration
+- Auto-hides and advances to next puzzle
 
-## Project Structure  {
+## Testing
 
-    files: ['**/*.{ts,tsx}'],
+### Answer Checking (Segment 5):
+
+1. **Correct Answer (Case Insensitive)**
+   - Type: `skoledag` or `SKOLEDAG` or `Skoledag`
+   - Expected: Green answer card appears, score increments (correct: 1, total: 1)
+
+2. **Incorrect Answer**
+   - Type: `wrong` or any other word
+   - Expected: Red answer card appears with correct answer, score shows (correct: 0, total: 1)
+
+3. **Timer Mode**
+   - Switch to "timed" mode in the header
+   - Timer counts down from default (60 seconds)
+   - When timer reaches 0, game ends and shows summary
+
+### Answer Card Display (Segment 6):
+
+1. **Correct Answer Card**
+   - Submit correct answer: `skoledag`
+   - Expected: Green card with "Riktig svar!" and answer image
+   - Displays for ~1.5 seconds, then auto-advances
+
+2. **Incorrect Answer Card**
+   - Submit wrong answer: `wrong`
+   - Expected: Red card with "Feil svar. Riktig svar er skoledag" and answer image
+   - Shows correct answer for learning
+
+3. **Config Changes**
+   - Edit `public/data/app.config.json`:
+     - `answerCard.showImage: false` → Only text, no image
+     - `answerCard.transition: "slide"` → Slide-up animation
+     - `answerCard.transition: "none"` → No animation
+     - `answerCard.durationMs: 1000` → Slower animation
+
+## Configuration
+
+All behavior controlled by `public/data/app.config.json`:
+
+### Game Engine:
+- `input.normalizeCase`: Case-insensitive comparison
+- `input.normalizeDiacritics`: Preserve/remove diacritics (æ/ø/å)
+- `selection.strategy`: random/sequential/shuffled puzzle order
+- `timer`: Countdown functionality for timed mode
+
+### Answer Card:
+- `answerCard.showImage`: Display answer image
+- `answerCard.transition`: fade/slide/none
+- `answerCard.durationMs`: Animation duration (ms)
+
+## Project Structure
 
 ```    extends: [
 

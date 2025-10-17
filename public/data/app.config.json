@@ -2,7 +2,7 @@
   "version": 1,
   "defaultLocale": "nb",
   "enabledModes": ["untimed", "timed"],
-  "defaultMode": "untimed",
+  "defaultMode": "timed",
   "timer": {
     "enabled": true,
     "durations": [30, 60, 90],
@@ -32,7 +32,8 @@
   "answerCard": {
     "showImage": true,
     "transition": "fade",
-    "durationMs": 500
+    "durationMs": 500,
+    "dismissOnClick": true
   },
   "images": {
     "preferFormats": ["svg", "webp", "avif"],

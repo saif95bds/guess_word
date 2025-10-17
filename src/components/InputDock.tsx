@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 
 interface InputDockProps {
   onSubmit: (answer: string) => void;
@@ -8,15 +8,26 @@ interface InputDockProps {
   exitText?: string;
 }
 
-export default function InputDock({ 
+export interface InputDockRef {
+  focus: () => void;
+}
+
+const InputDock = forwardRef<InputDockRef, InputDockProps>(({ 
   onSubmit, 
   onExit,
   placeholder = "Type the combined word...",
   submitText = "Submit",
   exitText = "Exit"
-}: InputDockProps) {
+}, ref) => {
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Expose focus method to parent components via ref
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current?.focus();
+    }
+  }));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,6 +51,7 @@ export default function InputDock({
             autoComplete="off"
             autoCapitalize="none"
             autoCorrect="off"
+            aria-label={placeholder}
           />
           
           <div className="button-group">
@@ -47,6 +59,7 @@ export default function InputDock({
               type="submit" 
               className="submit-btn"
               disabled={!inputValue.trim()}
+              aria-label="Submit answer"
             >
               {submitText}
             </button>
@@ -55,6 +68,7 @@ export default function InputDock({
               type="button" 
               onClick={onExit}
               className="exit-btn"
+              aria-label="Exit game"
             >
               {exitText}
             </button>
@@ -63,4 +77,8 @@ export default function InputDock({
       </form>
     </div>
   );
-}
+});
+
+InputDock.displayName = 'InputDock';
+
+export default InputDock;

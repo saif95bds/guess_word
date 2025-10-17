@@ -4,12 +4,12 @@
       "id": "skole-dag",
       "image1": {
         "srcBase": "skole",
-        "alt": "Skole",
+        "alt": "",
         "wordPart": "skole"
       },
       "image2": {
         "srcBase": "dag",
-        "alt": "Dag",
+        "alt": "",
         "wordPart": "dag"
       },
       "answerImage": {

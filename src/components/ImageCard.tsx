@@ -12,12 +12,30 @@ interface ImageCardProps {
 
 export default function ImageCard({ srcBase, alt, wordPart, onTap, config }: ImageCardProps) {
   const [imageError, setImageError] = useState(false);
+  const [showWordPart, setShowWordPart] = useState(false);
 
   const handleImageError = () => {
     setImageError(true);
   };
 
-  const renderImage = () => {
+  const handleClick = () => {
+    // Toggle between showing image and showing wordPart
+    setShowWordPart(!showWordPart);
+    // Call parent's onTap handler (e.g., to focus input)
+    onTap();
+  };
+
+  const renderContent = () => {
+    // If user clicked to reveal wordPart, show it
+    if (showWordPart) {
+      return (
+        <div className="image-placeholder">
+          <span className="placeholder-text wordpart-reveal">{wordPart}</span>
+        </div>
+      );
+    }
+
+    // If no image source or config, show placeholder
     if (!srcBase || !config) {
       return (
         <div className="image-placeholder">
@@ -26,6 +44,7 @@ export default function ImageCard({ srcBase, alt, wordPart, onTap, config }: Ima
       );
     }
 
+    // If image failed to load, show wordPart
     if (imageError) {
       return (
         <div className="image-placeholder">
@@ -34,6 +53,7 @@ export default function ImageCard({ srcBase, alt, wordPart, onTap, config }: Ima
       );
     }
 
+    // Show the actual image
     const srcset = buildSrcset(srcBase, config);
     const defaultSrc = getDefaultSrc(srcBase, config);
     const sizes = getSizesAttribute();
@@ -52,12 +72,9 @@ export default function ImageCard({ srcBase, alt, wordPart, onTap, config }: Ima
   };
 
   return (
-    <div className="image-card" onClick={onTap}>
+    <div className="image-card" onClick={handleClick}>
       <div className="image-container">
-        {renderImage()}
-      </div>
-      <div className="word-part">
-        <span>{wordPart}</span>
+        {renderContent()}
       </div>
     </div>
   );
