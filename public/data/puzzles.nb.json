@@ -1,45 +1,475 @@
 {
   "puzzles": [
     {
-      "id": "skole-dag",
-      "image1": {
-        "srcBase": "skole",
-        "alt": "",
-        "wordPart": "skole"
-      },
-      "image2": {
-        "srcBase": "dag",
-        "alt": "",
-        "wordPart": "dag"
-      },
-      "answerImage": {
-        "srcBase": "skoledag",
-        "alt": "Skoledag",
-        "word": "skoledag"
-      },
-      "answer": "skoledag",
-      "tags": ["education", "time"],
-      "childrenSafe": true
-    },
-    {
-      "id": "test-puzzle",
+      "id": "skole-buss",
       "image1": {
         "srcBase": "skole",
         "alt": "Skole",
-        "wordPart": "test"
+        "wordPart": "skole"
       },
       "image2": {
-        "srcBase": "dag",
-        "alt": "Dag", 
-        "wordPart": "word"
+        "srcBase": "buss",
+        "alt": "Buss",
+        "wordPart": "buss"
       },
       "answerImage": {
-        "srcBase": "skoledag",
-        "alt": "Test Word",
-        "word": "testword"
+        "srcBase": "skolebuss",
+        "alt": "Skolebuss",
+        "word": "skolebuss"
       },
-      "answer": "testword",
-      "tags": ["test"],
+      "answer": "skolebuss",
+      "tags": [
+        "education",
+        "transport"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "sol-skinn",
+      "image1": {
+        "srcBase": "sol",
+        "alt": "Sol",
+        "wordPart": "sol"
+      },
+      "image2": {
+        "srcBase": "skinn",
+        "alt": "Skinn",
+        "wordPart": "skinn"
+      },
+      "answerImage": {
+        "srcBase": "solskinn",
+        "alt": "Solskinn",
+        "word": "solskinn"
+      },
+      "answer": "solskinn",
+      "tags": [
+        "weather",
+        "nature"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "regn-jakke",
+      "image1": {
+        "srcBase": "regn",
+        "alt": "Regn",
+        "wordPart": "regn"
+      },
+      "image2": {
+        "srcBase": "jakke",
+        "alt": "Jakke",
+        "wordPart": "jakke"
+      },
+      "answerImage": {
+        "srcBase": "regnjakke",
+        "alt": "Regnjakke",
+        "word": "regnjakke"
+      },
+      "answer": "regnjakke",
+      "tags": [
+        "weather",
+        "clothes"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "fiske-bolle",
+      "image1": {
+        "srcBase": "fisk",
+        "alt": "Fisk",
+        "wordPart": "fiske"
+      },
+      "image2": {
+        "srcBase": "bolle",
+        "alt": "Bolle",
+        "wordPart": "bolle"
+      },
+      "answerImage": {
+        "srcBase": "fiskebolle",
+        "alt": "Fiskebolle",
+        "word": "fiskebolle"
+      },
+      "answer": "fiskebolle",
+      "tags": [
+        "food"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "tann-borste",
+      "image1": {
+        "srcBase": "tann",
+        "alt": "Tann",
+        "wordPart": "tann"
+      },
+      "image2": {
+        "srcBase": "børste",
+        "alt": "Børste",
+        "wordPart": "børste"
+      },
+      "answerImage": {
+        "srcBase": "tannbørste",
+        "alt": "Tannbørste",
+        "word": "tannbørste"
+      },
+      "answer": "tannbørste",
+      "tags": [
+        "hygiene"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "bok-hylle",
+      "image1": {
+        "srcBase": "bok",
+        "alt": "Bok",
+        "wordPart": "bok"
+      },
+      "image2": {
+        "srcBase": "hylle",
+        "alt": "Hylle",
+        "wordPart": "hylle"
+      },
+      "answerImage": {
+        "srcBase": "bokhylle",
+        "alt": "Bokhylle",
+        "word": "bokhylle"
+      },
+      "answer": "bokhylle",
+      "tags": [
+        "home",
+        "education"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "hand-ball",
+      "image1": {
+        "srcBase": "hånd",
+        "alt": "Hånd",
+        "wordPart": "hånd"
+      },
+      "image2": {
+        "srcBase": "ball",
+        "alt": "Ball",
+        "wordPart": "ball"
+      },
+      "answerImage": {
+        "srcBase": "håndball",
+        "alt": "Håndball",
+        "word": "håndball"
+      },
+      "answer": "håndball",
+      "tags": [
+        "sports"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "fot-ball",
+      "image1": {
+        "srcBase": "fot",
+        "alt": "Fot",
+        "wordPart": "fot"
+      },
+      "image2": {
+        "srcBase": "ball",
+        "alt": "Ball",
+        "wordPart": "ball"
+      },
+      "answerImage": {
+        "srcBase": "fotball",
+        "alt": "Fotball",
+        "word": "fotball"
+      },
+      "answer": "fotball",
+      "tags": [
+        "sports"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "sno-mann",
+      "image1": {
+        "srcBase": "snø",
+        "alt": "Snø",
+        "wordPart": "snø"
+      },
+      "image2": {
+        "srcBase": "mann",
+        "alt": "Mann",
+        "wordPart": "mann"
+      },
+      "answerImage": {
+        "srcBase": "snømann",
+        "alt": "Snømann",
+        "word": "snømann"
+      },
+      "answer": "snømann",
+      "tags": [
+        "winter",
+        "fun"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "is-krem",
+      "image1": {
+        "srcBase": "is",
+        "alt": "Is",
+        "wordPart": "is"
+      },
+      "image2": {
+        "srcBase": "krem",
+        "alt": "Krem",
+        "wordPart": "krem"
+      },
+      "answerImage": {
+        "srcBase": "iskrem",
+        "alt": "Iskrem",
+        "word": "iskrem"
+      },
+      "answer": "iskrem",
+      "tags": [
+        "food",
+        "summer"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "jord-bar",
+      "image1": {
+        "srcBase": "jord",
+        "alt": "Jord",
+        "wordPart": "jord"
+      },
+      "image2": {
+        "srcBase": "bær",
+        "alt": "Bær",
+        "wordPart": "bær"
+      },
+      "answerImage": {
+        "srcBase": "jordbær",
+        "alt": "Jordbær",
+        "word": "jordbær"
+      },
+      "answer": "jordbær",
+      "tags": [
+        "food",
+        "nature"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "melk-sjokolade",
+      "image1": {
+        "srcBase": "melk",
+        "alt": "Melk",
+        "wordPart": "melke"
+      },
+      "image2": {
+        "srcBase": "sjokolade",
+        "alt": "Sjokolade",
+        "wordPart": "sjokolade"
+      },
+      "answerImage": {
+        "srcBase": "melkesjokolade",
+        "alt": "Melkesjokolade",
+        "word": "melkesjokolade"
+      },
+      "answer": "melkesjokolade",
+      "tags": [
+        "food"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "fugle-sang",
+      "image1": {
+        "srcBase": "fugl",
+        "alt": "Fugl",
+        "wordPart": "fugle"
+      },
+      "image2": {
+        "srcBase": "sang",
+        "alt": "Sang",
+        "wordPart": "sang"
+      },
+      "answerImage": {
+        "srcBase": "fuglesang",
+        "alt": "Fuglesang",
+        "word": "fuglesang"
+      },
+      "answer": "fuglesang",
+      "tags": [
+        "nature",
+        "sound"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "kjokken-bord",
+      "image1": {
+        "srcBase": "kjøkken",
+        "alt": "Kjøkken",
+        "wordPart": "kjøkken"
+      },
+      "image2": {
+        "srcBase": "bord",
+        "alt": "Bord",
+        "wordPart": "bord"
+      },
+      "answerImage": {
+        "srcBase": "kjøkkenbord",
+        "alt": "Kjøkkenbord",
+        "word": "kjøkkenbord"
+      },
+      "answer": "kjøkkenbord",
+      "tags": [
+        "home"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "barne-hage",
+      "image1": {
+        "srcBase": "barn",
+        "alt": "Barn",
+        "wordPart": "barne"
+      },
+      "image2": {
+        "srcBase": "hage",
+        "alt": "Hage",
+        "wordPart": "hage"
+      },
+      "answerImage": {
+        "srcBase": "barnehage",
+        "alt": "Barnehage",
+        "word": "barnehage"
+      },
+      "answer": "barnehage",
+      "tags": [
+        "education",
+        "place"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "tog-spor",
+      "image1": {
+        "srcBase": "tog",
+        "alt": "Tog",
+        "wordPart": "tog"
+      },
+      "image2": {
+        "srcBase": "spor",
+        "alt": "Spor",
+        "wordPart": "spor"
+      },
+      "answerImage": {
+        "srcBase": "togspor",
+        "alt": "Togspor",
+        "word": "togspor"
+      },
+      "answer": "togspor",
+      "tags": [
+        "transport"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "sykkel-hjelm",
+      "image1": {
+        "srcBase": "sykkel",
+        "alt": "Sykkel",
+        "wordPart": "sykkel"
+      },
+      "image2": {
+        "srcBase": "hjelm",
+        "alt": "Hjelm",
+        "wordPart": "hjelm"
+      },
+      "answerImage": {
+        "srcBase": "sykkelhjelm",
+        "alt": "Sykkelhjelm",
+        "word": "sykkelhjelm"
+      },
+      "answer": "sykkelhjelm",
+      "tags": [
+        "transport",
+        "safety"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "katt-unge",
+      "image1": {
+        "srcBase": "katt",
+        "alt": "Katt",
+        "wordPart": "katt"
+      },
+      "image2": {
+        "srcBase": "unge",
+        "alt": "Unge",
+        "wordPart": "unge"
+      },
+      "answerImage": {
+        "srcBase": "kattunge",
+        "alt": "Kattunge",
+        "word": "kattunge"
+      },
+      "answer": "kattunge",
+      "tags": [
+        "animals",
+        "cute"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "vinter-jakke",
+      "image1": {
+        "srcBase": "vinter",
+        "alt": "Vinter",
+        "wordPart": "vinter"
+      },
+      "image2": {
+        "srcBase": "jakke",
+        "alt": "Jakke",
+        "wordPart": "jakke"
+      },
+      "answerImage": {
+        "srcBase": "vinterjakke",
+        "alt": "Vinterjakke",
+        "word": "vinterjakke"
+      },
+      "answer": "vinterjakke",
+      "tags": [
+        "winter",
+        "clothes"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "data-maskin",
+      "image1": {
+        "srcBase": "data",
+        "alt": "Data",
+        "wordPart": "data"
+      },
+      "image2": {
+        "srcBase": "maskin",
+        "alt": "Maskin",
+        "wordPart": "maskin"
+      },
+      "answerImage": {
+        "srcBase": "datamaskin",
+        "alt": "Datamaskin",
+        "word": "datamaskin"
+      },
+      "answer": "datamaskin",
+      "tags": [
+        "technology"
+      ],
       "childrenSafe": true
     }
   ]
