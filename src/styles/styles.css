@@ -486,6 +486,16 @@ body {
   justify-content: center;
   z-index: 1000;
   padding: 1rem;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-content {
@@ -496,6 +506,18 @@ body {
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .modal-header {
@@ -518,10 +540,16 @@ body {
   color: inherit;
   padding: 0.25rem;
   border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
 .close-btn:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.close-btn:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
 }
 
 .modal-body {
@@ -568,6 +596,17 @@ body {
 
 .replay-btn:hover {
   background: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.replay-btn:active {
+  transform: translateY(0);
+}
+
+.replay-btn:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
 }
 
 .change-mode-btn {
@@ -578,6 +617,16 @@ body {
 
 .change-mode-btn:hover {
   background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.change-mode-btn:active {
+  transform: translateY(0);
+}
+
+.change-mode-btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
 }
 
 /* Desktop Responsive */

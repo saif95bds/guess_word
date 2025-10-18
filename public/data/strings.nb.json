@@ -15,8 +15,13 @@
   },
   "summary": {
     "title": "Runde fullført!",
+    "titleTimeup": "Tiden er ute!",
+    "titleCompleted": "Alle oppgaver fullført!",
+    "titleExit": "Spill avsluttet",
     "scoreText": "Du fikk {{correct}} av {{total}} riktig!",
-    "percentage": "{{percent}}%"
+    "percentage": "{{percent}}%",
+    "perfectScore": "Perfekt! Alle riktige!",
+    "noAttempts": "Ingen oppgaver løst denne runden"
   },
   "errors": {
     "configLoadFailed": "Kunne ikke laste konfigurasjon",

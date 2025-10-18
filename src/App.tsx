@@ -177,6 +177,21 @@ function App() {
     }, 300)
   }
 
+  const getSummaryTitle = (): string => {
+    if (!summary) return getString('summary.title')
+    
+    switch (summary.reason) {
+      case 'timeup':
+        return getString('summary.titleTimeup')
+      case 'completed':
+        return getString('summary.titleCompleted')
+      case 'exit':
+        return getString('summary.titleExit')
+      default:
+        return getString('summary.title')
+    }
+  }
+
   const handleExit = () => {
     if (engineRef.current) {
       engineRef.current.complete('exit')
@@ -194,10 +209,18 @@ function App() {
 
   const handleChangeMode = () => {
     setShowModal(false)
-    // Mode change logic - for now just restart with default mode
-    if (engineRef.current && loadedData) {
-      engineRef.current.start(loadedData.app.defaultMode)
-    }
+    
+    if (!engineRef.current || !loadedData) return
+    
+    // Toggle between available modes
+    const currentMode = gameState?.mode || loadedData.app.defaultMode
+    const enabledModes = loadedData.app.enabledModes
+    const currentIndex = enabledModes.indexOf(currentMode)
+    const nextIndex = (currentIndex + 1) % enabledModes.length
+    const nextMode = enabledModes[nextIndex]
+    
+    // Start game with the next mode
+    engineRef.current.start(nextMode)
   }
 
   const handleModeChange = (mode: string) => {
@@ -338,13 +361,15 @@ function App() {
         onReplay={handleReplay}
         onChangeMode={handleChangeMode}
         onClose={() => setShowModal(false)}
-        title={getString('summary.title')}
+        title={getSummaryTitle()}
         scoreText={getString('summary.scoreText', {
           correct: (summary?.correct || score.correct).toString(),
           total: (summary?.total || score.total).toString()
         })}
         replayText={getString('ui.replay')}
         changeModeText={getString('ui.changeMode')}
+        perfectScoreText={getString('summary.perfectScore')}
+        noAttemptsText={getString('summary.noAttempts')}
       />
       
       {/* Answer Card - Shows after submission */}
