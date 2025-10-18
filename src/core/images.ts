@@ -7,7 +7,7 @@ import type { AppConfig } from '../types/config';
  * Build a srcset string for responsive images based on configured tiers
  */
 export function buildSrcset(srcBase: string, config: AppConfig): string {
-  const { tiers, preferFormats = ['webp'] } = config.images;
+  const { tiers, preferFormats = ['webp', `png`] } = config.images;
   const format = preferFormats[0] || 'webp';
   
   return tiers

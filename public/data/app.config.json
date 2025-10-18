@@ -36,7 +36,7 @@
     "dismissOnClick": true
   },
   "images": {
-    "preferFormats": ["svg", "webp", "avif"],
+    "preferFormats": ["svg", "webp", "avif", "png"],
     "tiers": [320, 480, 640],
     "budgetKB": 80
   }

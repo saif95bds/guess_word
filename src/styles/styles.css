@@ -78,12 +78,25 @@ body {
 }
 
 .mode-select {
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
   color: inherit;
   font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-select:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.mode-select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
 .score-display {
@@ -91,11 +104,46 @@ body {
   flex-direction: column;
   align-items: flex-end;
   font-size: 0.9rem;
+  gap: 0.25rem;
+}
+
+.score {
+  font-weight: 500;
 }
 
 .timer {
-  font-size: 0.8rem;
-  opacity: 0.8;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  transition: all 0.3s ease;
+}
+
+/* Timer warning state - handled via class in component */
+.timer-warning {
+  background: rgba(255, 152, 0, 0.2);
+  color: #FF9800;
+  animation: timerPulse 1s ease-in-out infinite;
+}
+
+/* Timer critical state */
+.timer-critical {
+  background: rgba(244, 67, 54, 0.2);
+  color: #F44336;
+  animation: timerPulse 0.5s ease-in-out infinite;
+}
+
+@keyframes timerPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
 }
 
 /* Main Game Area */
@@ -563,6 +611,159 @@ body {
   .exit-btn {
     flex: none;
     min-width: 100px;
+  }
+}
+
+/* Effects Layer */
+
+/* Sad Face Overlay */
+.sad-face-overlay {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 600;
+  animation: sadFaceAppear 0.3s ease-out;
+  pointer-events: none;
+}
+
+.sad-face-svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  animation: sadFaceBob 2s ease-in-out infinite;
+}
+
+@keyframes sadFaceAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes sadFaceBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Shake Effect for Images */
+.effect-shake-active ~ main .image-card {
+  animation: shakeEffect 0.5s ease-in-out;
+}
+
+@keyframes shakeEffect {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+/* Collide Effect for Images */
+.effect-collide-active ~ main .cards-container {
+  animation: collideContainer 0.7s ease-out;
+}
+
+.effect-collide-active ~ main .image-card:first-child {
+  animation: collideLeft 0.7s ease-out;
+}
+
+.effect-collide-active ~ main .image-card:last-child {
+  animation: collideRight 0.7s ease-out;
+}
+
+@keyframes collideContainer {
+  0% {
+    gap: var(--card-gap);
+  }
+  50% {
+    gap: 0;
+  }
+  100% {
+    gap: var(--card-gap);
+  }
+}
+
+@keyframes collideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes collideRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Confetti Effect */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 700;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  opacity: 0;
+  animation: confettiFall 3s ease-in forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    top: -10px;
+    opacity: 1;
+    transform: translateX(0) rotateZ(0deg);
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+    transform: translateX(calc(var(--random-x, 0) * 100px)) rotateZ(720deg);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .effect-shake-active ~ main .image-card,
+  .effect-collide-active ~ main .image-card,
+  .effect-collide-active ~ main .cards-container,
+  .sad-face-svg,
+  .confetti-piece {
+    animation: none !important;
+  }
+  
+  .sad-face-overlay {
+    animation: none !important;
+    opacity: 0.8;
   }
 }
 

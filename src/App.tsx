@@ -5,6 +5,7 @@ import ImageCard from './components/ImageCard'
 import InputDock, { type InputDockRef } from './components/InputDock'
 import SummaryModal from './components/SummaryModal'
 import AnswerCard from './components/AnswerCard'
+import EffectsLayer from './components/EffectsLayer'
 import { loadAll, LoadError, type LoadedData } from './core/loader'
 import { initStrings, getString } from './core/strings'
 import { preloadImage } from './core/images'
@@ -16,6 +17,7 @@ function App() {
   const [showModal, setShowModal] = useState(false)
   const [showAnswerCard, setShowAnswerCard] = useState(false)
   const [lastAnswerCorrect, setLastAnswerCorrect] = useState(true)
+  const [currentEffect, setCurrentEffect] = useState<'correct' | 'incorrect' | 'roundComplete' | null>(null)
   const [summary, setSummary] = useState<Summary | null>(null)
   const [loadedData, setLoadedData] = useState<LoadedData | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
@@ -79,13 +81,19 @@ function App() {
         },
         onCorrect: (state: GameState) => {
           console.log('Correct answer!', state)
+          setCurrentEffect('correct')
         },
         onIncorrect: (state: GameState) => {
           console.log('Incorrect answer!', state)
+          setCurrentEffect('incorrect')
         },
         onComplete: (summaryData: Summary) => {
           setSummary(summaryData)
           setShowModal(true)
+          // Show confetti if any puzzles were completed
+          if (summaryData.total > 0) {
+            setCurrentEffect('roundComplete')
+          }
         },
         onTick: (state: GameState) => {
           setGameState({ ...state })
@@ -193,10 +201,31 @@ function App() {
   }
 
   const handleModeChange = (mode: string) => {
-    // Restart the game with the new mode
+    // Clear any pending timers
+    if (advanceTimerRef.current !== null) {
+      clearTimeout(advanceTimerRef.current)
+      advanceTimerRef.current = null
+    }
+    
+    // Hide answer card if showing
+    setShowAnswerCard(false)
+    
+    // Restart the game with the new mode (don't show modal on mode change)
     if (engineRef.current) {
-      engineRef.current.complete('exit')
-      engineRef.current.start(mode)
+      // Don't call complete - just stop the current game
+      const currentEngine = engineRef.current
+      // Stop any running timers in the engine
+      if (currentEngine.getState()) {
+        // Clear the state without triggering completion
+        (currentEngine as any).state = null
+        if ((currentEngine as any).timerInterval !== null) {
+          clearInterval((currentEngine as any).timerInterval)
+          ;(currentEngine as any).timerInterval = null
+        }
+      }
+      
+      // Start fresh with new mode
+      currentEngine.start(mode)
     }
   }
 
@@ -268,6 +297,7 @@ function App() {
           total: score.total.toString() 
         })}
         timer={timerEnabled ? getString('ui.timeLeft', { time: timeLeftDisplay }) : undefined}
+        timeLeft={timerEnabled ? gameState?.timeLeft : undefined}
         onModeChange={handleModeChange}
         enabledModes={config.enabledModes}
         currentMode={currentMode}
@@ -327,6 +357,13 @@ function App() {
           onDismiss={handleAnswerCardDismiss}
         />
       )}
+      
+      {/* Effects Layer - Visual feedback for game events */}
+      <EffectsLayer
+        config={config}
+        trigger={currentEffect}
+        onComplete={() => setCurrentEffect(null)}
+      />
     </div>
   )
 }
