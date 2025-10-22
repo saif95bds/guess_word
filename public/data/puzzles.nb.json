@@ -244,7 +244,7 @@
         "wordPart": "jord"
       },
       "image2": {
-        "srcBase": "bær",
+        "srcBase": "bar",
         "alt": "Bær",
         "wordPart": "bær"
       },
@@ -265,7 +265,7 @@
       "image1": {
         "srcBase": "melk",
         "alt": "Melk",
-        "wordPart": "melke"
+        "wordPart": "melk"
       },
       "image2": {
         "srcBase": "sjokolade",
@@ -288,7 +288,7 @@
       "image1": {
         "srcBase": "fugl",
         "alt": "Fugl",
-        "wordPart": "fugle"
+        "wordPart": "fugl"
       },
       "image2": {
         "srcBase": "sang",

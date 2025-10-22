@@ -10,13 +10,14 @@ import { loadAll, LoadError, type LoadedData } from './core/loader'
 import { initStrings, getString } from './core/strings'
 import { preloadImage } from './core/images'
 import { Engine } from './core/engine'
-import type { GameState, Summary } from './types/config'
+import type { GameState, Summary, Puzzle } from './types/config'
 
 function App() {
   const [gameState, setGameState] = useState<GameState | null>(null)
   const [showModal, setShowModal] = useState(false)
   const [showAnswerCard, setShowAnswerCard] = useState(false)
   const [lastAnswerCorrect, setLastAnswerCorrect] = useState(true)
+  const [answeredPuzzle, setAnsweredPuzzle] = useState<Puzzle | null>(null) // Store the puzzle that was just answered
   const [currentEffect, setCurrentEffect] = useState<'correct' | 'incorrect' | 'roundComplete' | null>(null)
   const [summary, setSummary] = useState<Summary | null>(null)
   const [loadedData, setLoadedData] = useState<LoadedData | null>(null)
@@ -77,7 +78,13 @@ function App() {
       loadedData.puzzles,
       {
         onRender: (state: GameState) => {
-          setGameState(state)
+          console.log('Engine onRender called:', {
+            index: state.index,
+            puzzleId: state.current.id,
+            image1: state.current.image1.srcBase,
+            image2: state.current.image2.srcBase
+          });
+          setGameState({ ...state })
         },
         onCorrect: (state: GameState) => {
           console.log('Correct answer!', state)
@@ -119,13 +126,28 @@ function App() {
     }
   }, [loadedData])
 
+  // Debug: Log puzzle changes
+  useEffect(() => {
+    if (gameState?.current) {
+      console.log('Current puzzle changed:', {
+        index: gameState.index,
+        id: gameState.current.id,
+        image1: gameState.current.image1.srcBase,
+        image2: gameState.current.image2.srcBase
+      });
+    }
+  }, [gameState?.current, gameState?.index]);
+
   const handleImageTap = () => {
     // Focus the input when an image is tapped using the ref
     inputDockRef.current?.focus()
   }
 
   const handleSubmit = (answer: string) => {
-    if (!engineRef.current || !loadedData) return
+    if (!engineRef.current || !loadedData || !gameState) return
+    
+    // Store the current puzzle before submitting (for answer card display)
+    setAnsweredPuzzle(gameState.current)
     
     // Submit answer to engine for evaluation
     const isCorrect = engineRef.current.submit(answer)
@@ -148,18 +170,26 @@ function App() {
     
     // Hide answer card and advance to next puzzle after delay
     advanceTimerRef.current = window.setTimeout(() => {
+      console.log('Auto-advance: Hiding answer card and moving to next puzzle');
       setShowAnswerCard(false)
+      setAnsweredPuzzle(null) // Clear the answered puzzle
       
       // Small delay before moving to next puzzle
       setTimeout(() => {
         if (engineRef.current) {
-          engineRef.current.next()
+          try {
+            console.log('Auto-advance: Calling engine.next()');
+            engineRef.current.next()
+          } catch (error) {
+            console.error('Error calling engine.next() in auto-advance:', error);
+          }
         }
       }, 300)
     }, totalDelay)
   }
 
   const handleAnswerCardDismiss = () => {
+    console.log('Manual dismiss: Answer card clicked');
     // Clear the auto-advance timer
     if (advanceTimerRef.current !== null) {
       clearTimeout(advanceTimerRef.current)
@@ -169,10 +199,18 @@ function App() {
     // Hide answer card immediately
     setShowAnswerCard(false)
     
+    // Clear the answered puzzle
+    setAnsweredPuzzle(null)
+    
     // Small delay before moving to next puzzle
     setTimeout(() => {
       if (engineRef.current) {
-        engineRef.current.next()
+        try {
+          console.log('Manual dismiss: Calling engine.next()');
+          engineRef.current.next()
+        } catch (error) {
+          console.error('Error calling engine.next() in manual dismiss:', error);
+        }
       }
     }, 300)
   }
@@ -232,6 +270,7 @@ function App() {
     
     // Hide answer card if showing
     setShowAnswerCard(false)
+    setAnsweredPuzzle(null) // Clear the answered puzzle
     
     // Restart the game with the new mode (don't show modal on mode change)
     if (engineRef.current) {
@@ -329,6 +368,7 @@ function App() {
       <main className="game-area">
         <div className="cards-container">
           <ImageCard
+            key={`${currentPuzzle.id}-image1`}
             srcBase={currentPuzzle.image1.srcBase}
             alt={currentPuzzle.image1.alt}
             wordPart={currentPuzzle.image1.wordPart}
@@ -337,6 +377,7 @@ function App() {
           />
           
           <ImageCard
+            key={`${currentPuzzle.id}-image2`}
             srcBase={currentPuzzle.image2.srcBase}
             alt={currentPuzzle.image2.alt}
             wordPart={currentPuzzle.image2.wordPart}
@@ -373,9 +414,9 @@ function App() {
       />
       
       {/* Answer Card - Shows after submission */}
-      {showAnswerCard && currentPuzzle.answerImage && (
+      {showAnswerCard && answeredPuzzle?.answerImage && (
         <AnswerCard
-          answerImage={currentPuzzle.answerImage}
+          answerImage={answeredPuzzle.answerImage}
           config={config}
           isVisible={showAnswerCard}
           isCorrect={lastAnswerCorrect}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { buildSrcset, getDefaultSrc, getSizesAttribute } from '../core/images';
 import type { AppConfig } from '../types/config';
 
@@ -13,6 +13,13 @@ interface ImageCardProps {
 export default function ImageCard({ srcBase, alt, wordPart, onTap, config }: ImageCardProps) {
   const [imageError, setImageError] = useState(false);
   const [showWordPart, setShowWordPart] = useState(false);
+
+  // Reset state when srcBase changes (new puzzle)
+  useEffect(() => {
+    console.log('ImageCard: srcBase changed to:', srcBase);
+    setImageError(false);
+    setShowWordPart(false);
+  }, [srcBase]);
 
   const handleImageError = () => {
     setImageError(true);

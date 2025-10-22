@@ -4,7 +4,7 @@
   "enabledModes": ["untimed", "timed"],
   "defaultMode": "timed",
   "timer": {
-    "enabled": true,
+    "enabled": false,
     "durations": [30, 60, 90],
     "default": 60
   },

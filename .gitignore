@@ -1,5 +1,7 @@
 # Logs
 instructions/*
+original_pictures/*
+public/assets/images/*
 
 logs
 *.log
