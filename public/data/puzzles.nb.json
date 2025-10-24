@@ -3,17 +3,17 @@
     {
       "id": "skole-buss",
       "image1": {
-        "srcBase": "skole",
+        "srcBase": "school",
         "alt": "Skole",
         "wordPart": "skole"
       },
       "image2": {
-        "srcBase": "buss",
+        "srcBase": "bus",
         "alt": "Buss",
         "wordPart": "buss"
       },
       "answerImage": {
-        "srcBase": "skolebuss",
+        "srcBase": "schoolbus",
         "alt": "Skolebuss",
         "word": "skolebuss"
       },
@@ -27,17 +27,17 @@
     {
       "id": "sol-skinn",
       "image1": {
-        "srcBase": "sol",
+        "srcBase": "sun",
         "alt": "Sol",
         "wordPart": "sol"
       },
       "image2": {
-        "srcBase": "skinn",
+        "srcBase": "shine",
         "alt": "Skinn",
         "wordPart": "skinn"
       },
       "answerImage": {
-        "srcBase": "solskinn",
+        "srcBase": "sunshine",
         "alt": "Solskinn",
         "word": "solskinn"
       },
@@ -51,17 +51,17 @@
     {
       "id": "regn-jakke",
       "image1": {
-        "srcBase": "regn",
+        "srcBase": "rain",
         "alt": "Regn",
         "wordPart": "regn"
       },
       "image2": {
-        "srcBase": "jakke",
+        "srcBase": "jacket",
         "alt": "Jakke",
         "wordPart": "jakke"
       },
       "answerImage": {
-        "srcBase": "regnjakke",
+        "srcBase": "rainjacket",
         "alt": "Regnjakke",
         "word": "regnjakke"
       },
@@ -75,17 +75,17 @@
     {
       "id": "fiske-bolle",
       "image1": {
-        "srcBase": "fisk",
+        "srcBase": "fish",
         "alt": "Fisk",
         "wordPart": "fiske"
       },
       "image2": {
-        "srcBase": "bolle",
+        "srcBase": "ball",
         "alt": "Bolle",
         "wordPart": "bolle"
       },
       "answerImage": {
-        "srcBase": "fiskebolle",
+        "srcBase": "fishball",
         "alt": "Fiskebolle",
         "word": "fiskebolle"
       },
@@ -98,17 +98,17 @@
     {
       "id": "tann-borste",
       "image1": {
-        "srcBase": "tann",
+        "srcBase": "tooth",
         "alt": "Tann",
         "wordPart": "tann"
       },
       "image2": {
-        "srcBase": "børste",
+        "srcBase": "brush",
         "alt": "Børste",
         "wordPart": "børste"
       },
       "answerImage": {
-        "srcBase": "tannbørste",
+        "srcBase": "toothbrush",
         "alt": "Tannbørste",
         "word": "tannbørste"
       },
@@ -121,17 +121,17 @@
     {
       "id": "bok-hylle",
       "image1": {
-        "srcBase": "bok",
+        "srcBase": "book",
         "alt": "Bok",
         "wordPart": "bok"
       },
       "image2": {
-        "srcBase": "hylle",
+        "srcBase": "shelf",
         "alt": "Hylle",
         "wordPart": "hylle"
       },
       "answerImage": {
-        "srcBase": "bokhylle",
+        "srcBase": "bookshelf",
         "alt": "Bokhylle",
         "word": "bokhylle"
       },
@@ -145,7 +145,7 @@
     {
       "id": "hand-ball",
       "image1": {
-        "srcBase": "hånd",
+        "srcBase": "hand",
         "alt": "Hånd",
         "wordPart": "hånd"
       },
@@ -155,7 +155,7 @@
         "wordPart": "ball"
       },
       "answerImage": {
-        "srcBase": "håndball",
+        "srcBase": "handball",
         "alt": "Håndball",
         "word": "håndball"
       },
@@ -168,7 +168,7 @@
     {
       "id": "fot-ball",
       "image1": {
-        "srcBase": "fot",
+        "srcBase": "foot",
         "alt": "Fot",
         "wordPart": "fot"
       },
@@ -178,7 +178,7 @@
         "wordPart": "ball"
       },
       "answerImage": {
-        "srcBase": "fotball",
+        "srcBase": "football",
         "alt": "Fotball",
         "word": "fotball"
       },
@@ -191,17 +191,17 @@
     {
       "id": "sno-mann",
       "image1": {
-        "srcBase": "snø",
+        "srcBase": "snow",
         "alt": "Snø",
         "wordPart": "snø"
       },
       "image2": {
-        "srcBase": "mann",
+        "srcBase": "man",
         "alt": "Mann",
         "wordPart": "mann"
       },
       "answerImage": {
-        "srcBase": "snømann",
+        "srcBase": "snowman",
         "alt": "Snømann",
         "word": "snømann"
       },
@@ -215,17 +215,17 @@
     {
       "id": "is-krem",
       "image1": {
-        "srcBase": "is",
+        "srcBase": "ice",
         "alt": "Is",
         "wordPart": "is"
       },
       "image2": {
-        "srcBase": "krem",
+        "srcBase": "cream",
         "alt": "Krem",
         "wordPart": "krem"
       },
       "answerImage": {
-        "srcBase": "iskrem",
+        "srcBase": "icecream",
         "alt": "Iskrem",
         "word": "iskrem"
       },
@@ -239,17 +239,17 @@
     {
       "id": "jord-bar",
       "image1": {
-        "srcBase": "jord",
+        "srcBase": "earth",
         "alt": "Jord",
         "wordPart": "jord"
       },
       "image2": {
-        "srcBase": "bar",
+        "srcBase": "berry",
         "alt": "Bær",
         "wordPart": "bær"
       },
       "answerImage": {
-        "srcBase": "jordbær",
+        "srcBase": "strawberry",
         "alt": "Jordbær",
         "word": "jordbær"
       },
@@ -263,17 +263,17 @@
     {
       "id": "melk-sjokolade",
       "image1": {
-        "srcBase": "melk",
+        "srcBase": "milk",
         "alt": "Melk",
         "wordPart": "melk"
       },
       "image2": {
-        "srcBase": "sjokolade",
+        "srcBase": "chocolate",
         "alt": "Sjokolade",
         "wordPart": "sjokolade"
       },
       "answerImage": {
-        "srcBase": "melkesjokolade",
+        "srcBase": "milkchocolate",
         "alt": "Melkesjokolade",
         "word": "melkesjokolade"
       },
@@ -286,17 +286,17 @@
     {
       "id": "fugle-sang",
       "image1": {
-        "srcBase": "fugl",
+        "srcBase": "bird",
         "alt": "Fugl",
         "wordPart": "fugl"
       },
       "image2": {
-        "srcBase": "sang",
+        "srcBase": "song",
         "alt": "Sang",
         "wordPart": "sang"
       },
       "answerImage": {
-        "srcBase": "fuglesang",
+        "srcBase": "birdsong",
         "alt": "Fuglesang",
         "word": "fuglesang"
       },
@@ -310,17 +310,17 @@
     {
       "id": "kjokken-bord",
       "image1": {
-        "srcBase": "kjøkken",
+        "srcBase": "kitchen",
         "alt": "Kjøkken",
         "wordPart": "kjøkken"
       },
       "image2": {
-        "srcBase": "bord",
+        "srcBase": "table",
         "alt": "Bord",
         "wordPart": "bord"
       },
       "answerImage": {
-        "srcBase": "kjøkkenbord",
+        "srcBase": "kitchentable",
         "alt": "Kjøkkenbord",
         "word": "kjøkkenbord"
       },
@@ -333,17 +333,17 @@
     {
       "id": "barne-hage",
       "image1": {
-        "srcBase": "barn",
+        "srcBase": "child",
         "alt": "Barn",
         "wordPart": "barne"
       },
       "image2": {
-        "srcBase": "hage",
+        "srcBase": "garden",
         "alt": "Hage",
         "wordPart": "hage"
       },
       "answerImage": {
-        "srcBase": "barnehage",
+        "srcBase": "kindergarten",
         "alt": "Barnehage",
         "word": "barnehage"
       },
@@ -357,17 +357,17 @@
     {
       "id": "tog-spor",
       "image1": {
-        "srcBase": "tog",
+        "srcBase": "train",
         "alt": "Tog",
         "wordPart": "tog"
       },
       "image2": {
-        "srcBase": "spor",
+        "srcBase": "track",
         "alt": "Spor",
         "wordPart": "spor"
       },
       "answerImage": {
-        "srcBase": "togspor",
+        "srcBase": "traintrack",
         "alt": "Togspor",
         "word": "togspor"
       },
@@ -380,17 +380,17 @@
     {
       "id": "sykkel-hjelm",
       "image1": {
-        "srcBase": "sykkel",
+        "srcBase": "bicycle",
         "alt": "Sykkel",
         "wordPart": "sykkel"
       },
       "image2": {
-        "srcBase": "hjelm",
+        "srcBase": "helmet",
         "alt": "Hjelm",
         "wordPart": "hjelm"
       },
       "answerImage": {
-        "srcBase": "sykkelhjelm",
+        "srcBase": "bicyclehelmet",
         "alt": "Sykkelhjelm",
         "word": "sykkelhjelm"
       },
@@ -404,17 +404,17 @@
     {
       "id": "katt-unge",
       "image1": {
-        "srcBase": "katt",
+        "srcBase": "cat",
         "alt": "Katt",
         "wordPart": "katt"
       },
       "image2": {
-        "srcBase": "unge",
+        "srcBase": "kitten",
         "alt": "Unge",
         "wordPart": "unge"
       },
       "answerImage": {
-        "srcBase": "kattunge",
+        "srcBase": "kitten",
         "alt": "Kattunge",
         "word": "kattunge"
       },
@@ -428,17 +428,17 @@
     {
       "id": "vinter-jakke",
       "image1": {
-        "srcBase": "vinter",
+        "srcBase": "winter",
         "alt": "Vinter",
         "wordPart": "vinter"
       },
       "image2": {
-        "srcBase": "jakke",
+        "srcBase": "jacket",
         "alt": "Jakke",
         "wordPart": "jakke"
       },
       "answerImage": {
-        "srcBase": "vinterjakke",
+        "srcBase": "winterjacket",
         "alt": "Vinterjakke",
         "word": "vinterjakke"
       },
@@ -452,23 +452,500 @@
     {
       "id": "data-maskin",
       "image1": {
-        "srcBase": "data",
+        "srcBase": "computer",
         "alt": "Data",
         "wordPart": "data"
       },
       "image2": {
-        "srcBase": "maskin",
+        "srcBase": "machine",
         "alt": "Maskin",
         "wordPart": "maskin"
       },
       "answerImage": {
-        "srcBase": "datamaskin",
+        "srcBase": "computer",
         "alt": "Datamaskin",
         "word": "datamaskin"
       },
       "answer": "datamaskin",
       "tags": [
         "technology"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "sove-rom",
+      "image1": {
+        "srcBase": "sleep",
+        "alt": "Sove",
+        "wordPart": "sove"
+      },
+      "image2": {
+        "srcBase": "room",
+        "alt": "Rom",
+        "wordPart": "rom"
+      },
+      "answerImage": {
+        "srcBase": "bedroom",
+        "alt": "Soverom",
+        "word": "soverom"
+      },
+      "answer": "soverom",
+      "tags": [
+        "home",
+        "furniture"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "sol-briller",
+      "image1": {
+        "srcBase": "sun",
+        "alt": "Sol",
+        "wordPart": "sol"
+      },
+      "image2": {
+        "srcBase": "glasses",
+        "alt": "Briller",
+        "wordPart": "briller"
+      },
+      "answerImage": {
+        "srcBase": "sunglasses",
+        "alt": "Solbriller",
+        "word": "solbriller"
+      },
+      "answer": "solbriller",
+      "tags": [
+        "summer",
+        "clothes"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "bade-rom",
+      "image1": {
+        "srcBase": "bath",
+        "alt": "Bade",
+        "wordPart": "bade"
+      },
+      "image2": {
+        "srcBase": "room",
+        "alt": "Rom",
+        "wordPart": "rom"
+      },
+      "answerImage": {
+        "srcBase": "bathroom",
+        "alt": "Baderom",
+        "word": "baderom"
+      },
+      "answer": "baderom",
+      "tags": [
+        "home"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "sove-pose",
+      "image1": {
+        "srcBase": "sleep",
+        "alt": "Sove",
+        "wordPart": "sove"
+      },
+      "image2": {
+        "srcBase": "bag",
+        "alt": "Pose",
+        "wordPart": "pose"
+      },
+      "answerImage": {
+        "srcBase": "sleepingbag",
+        "alt": "Sovepose",
+        "word": "sovepose"
+      },
+      "answer": "sovepose",
+      "tags": [
+        "camping",
+        "outdoor"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "brød-skive",
+      "image1": {
+        "srcBase": "bread",
+        "alt": "Brød",
+        "wordPart": "brød"
+      },
+      "image2": {
+        "srcBase": "slice",
+        "alt": "Skive",
+        "wordPart": "skive"
+      },
+      "answerImage": {
+        "srcBase": "breadslice",
+        "alt": "Brødskive",
+        "word": "brødskive"
+      },
+      "answer": "brødskive",
+      "tags": [
+        "food"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "te-kopp",
+      "image1": {
+        "srcBase": "tea",
+        "alt": "Te",
+        "wordPart": "te"
+      },
+      "image2": {
+        "srcBase": "cup",
+        "alt": "Kopp",
+        "wordPart": "kopp"
+      },
+      "answerImage": {
+        "srcBase": "teacup",
+        "alt": "Tekopp",
+        "word": "tekopp"
+      },
+      "answer": "tekopp",
+      "tags": [
+        "food",
+        "home"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "regn-bue",
+      "image1": {
+        "srcBase": "rain",
+        "alt": "Regn",
+        "wordPart": "regn"
+      },
+      "image2": {
+        "srcBase": "bow",
+        "alt": "Bue",
+        "wordPart": "bue"
+      },
+      "answerImage": {
+        "srcBase": "rainbow",
+        "alt": "Regnbue",
+        "word": "regnbue"
+      },
+      "answer": "regnbue",
+      "tags": [
+        "weather",
+        "nature"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "sko-sko",
+      "image1": {
+        "srcBase": "shoe",
+        "alt": "Sko",
+        "wordPart": "sko"
+      },
+      "image2": {
+        "srcBase": "lace",
+        "alt": "Snøre",
+        "wordPart": "snøre"
+      },
+      "answerImage": {
+        "srcBase": "shoelace",
+        "alt": "Skolisse",
+        "word": "skolisse"
+      },
+      "answer": "skolisse",
+      "tags": [
+        "clothes"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "male-pensel",
+      "image1": {
+        "srcBase": "paint",
+        "alt": "Male",
+        "wordPart": "male"
+      },
+      "image2": {
+        "srcBase": "brush",
+        "alt": "Pensel",
+        "wordPart": "pensel"
+      },
+      "answerImage": {
+        "srcBase": "paintbrush",
+        "alt": "Malepensel",
+        "word": "malepensel"
+      },
+      "answer": "malepensel",
+      "tags": [
+        "art",
+        "hobby"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "dag-bok",
+      "image1": {
+        "srcBase": "day",
+        "alt": "Dag",
+        "wordPart": "dag"
+      },
+      "image2": {
+        "srcBase": "book",
+        "alt": "Bok",
+        "wordPart": "bok"
+      },
+      "answerImage": {
+        "srcBase": "diary",
+        "alt": "Dagbok",
+        "word": "dagbok"
+      },
+      "answer": "dagbok",
+      "tags": [
+        "education",
+        "writing"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "natte-lampe",
+      "image1": {
+        "srcBase": "night",
+        "alt": "Natt",
+        "wordPart": "natt"
+      },
+      "image2": {
+        "srcBase": "lamp",
+        "alt": "Lampe",
+        "wordPart": "lampe"
+      },
+      "answerImage": {
+        "srcBase": "nightlamp",
+        "alt": "Nattlampe",
+        "word": "nattlampe"
+      },
+      "answer": "nattlampe",
+      "tags": [
+        "home",
+        "furniture"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "vann-flaske",
+      "image1": {
+        "srcBase": "water",
+        "alt": "Vann",
+        "wordPart": "vann"
+      },
+      "image2": {
+        "srcBase": "bottle",
+        "alt": "Flaske",
+        "wordPart": "flaske"
+      },
+      "answerImage": {
+        "srcBase": "waterbottle",
+        "alt": "Vannflaske",
+        "word": "vannflaske"
+      },
+      "answer": "vannflaske",
+      "tags": [
+        "food",
+        "sports"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "blomst-potte",
+      "image1": {
+        "srcBase": "flower",
+        "alt": "Blomst",
+        "wordPart": "blomst"
+      },
+      "image2": {
+        "srcBase": "pot",
+        "alt": "Potte",
+        "wordPart": "potte"
+      },
+      "answerImage": {
+        "srcBase": "flowerpot",
+        "alt": "Blomsterpott",
+        "word": "blomsterpott"
+      },
+      "answer": "blomsterpott",
+      "tags": [
+        "home",
+        "garden"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "tre-hus",
+      "image1": {
+        "srcBase": "tree",
+        "alt": "Tre",
+        "wordPart": "tre"
+      },
+      "image2": {
+        "srcBase": "house",
+        "alt": "Hus",
+        "wordPart": "hus"
+      },
+      "answerImage": {
+        "srcBase": "treehouse",
+        "alt": "Trehus",
+        "word": "trehus"
+      },
+      "answer": "trehus",
+      "tags": [
+        "outdoor",
+        "fun"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "sol-krem",
+      "image1": {
+        "srcBase": "sun",
+        "alt": "Sol",
+        "wordPart": "sol"
+      },
+      "image2": {
+        "srcBase": "cream",
+        "alt": "Krem",
+        "wordPart": "krem"
+      },
+      "answerImage": {
+        "srcBase": "sunscreen",
+        "alt": "Solkrem",
+        "word": "solkrem"
+      },
+      "answer": "solkrem",
+      "tags": [
+        "summer",
+        "health"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "stein-bro",
+      "image1": {
+        "srcBase": "stone",
+        "alt": "Stein",
+        "wordPart": "stein"
+      },
+      "image2": {
+        "srcBase": "bridge",
+        "alt": "Bro",
+        "wordPart": "bro"
+      },
+      "answerImage": {
+        "srcBase": "stonebridge",
+        "alt": "Steinbro",
+        "word": "steinbro"
+      },
+      "answer": "steinbro",
+      "tags": [
+        "outdoor",
+        "architecture"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "sand-slott",
+      "image1": {
+        "srcBase": "sand",
+        "alt": "Sand",
+        "wordPart": "sand"
+      },
+      "image2": {
+        "srcBase": "castle",
+        "alt": "Slott",
+        "wordPart": "slott"
+      },
+      "answerImage": {
+        "srcBase": "sandcastle",
+        "alt": "Sandslott",
+        "word": "sandslott"
+      },
+      "answer": "sandslott",
+      "tags": [
+        "summer",
+        "beach"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "stol-pute",
+      "image1": {
+        "srcBase": "chair",
+        "alt": "Stol",
+        "wordPart": "stol"
+      },
+      "image2": {
+        "srcBase": "pillow",
+        "alt": "Pute",
+        "wordPart": "pute"
+      },
+      "answerImage": {
+        "srcBase": "chairpillow",
+        "alt": "Stolpute",
+        "word": "stolpute"
+      },
+      "answer": "stolpute",
+      "tags": [
+        "home",
+        "furniture"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "hund-hus",
+      "image1": {
+        "srcBase": "dog",
+        "alt": "Hund",
+        "wordPart": "hund"
+      },
+      "image2": {
+        "srcBase": "house",
+        "alt": "Hus",
+        "wordPart": "hus"
+      },
+      "answerImage": {
+        "srcBase": "doghouse",
+        "alt": "Hundehus",
+        "word": "hundehus"
+      },
+      "answer": "hundehus",
+      "tags": [
+        "animals",
+        "outdoor"
+      ],
+      "childrenSafe": true
+    },
+    {
+      "id": "hjerte-form",
+      "image1": {
+        "srcBase": "heart",
+        "alt": "Hjerte",
+        "wordPart": "hjerte"
+      },
+      "image2": {
+        "srcBase": "shape",
+        "alt": "Form",
+        "wordPart": "form"
+      },
+      "answerImage": {
+        "srcBase": "heartshape",
+        "alt": "Hjerteform",
+        "word": "hjerteform"
+      },
+      "answer": "hjerteform",
+      "tags": [
+        "shapes",
+        "love"
       ],
       "childrenSafe": true
     }
